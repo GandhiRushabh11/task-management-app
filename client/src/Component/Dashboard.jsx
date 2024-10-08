@@ -34,7 +34,10 @@ function Dashboard() {
   const fetchTasks = async () => {
     try {
       setError("");
-      const res = await axios.get("http://localhost:8000/api/v1/tasks", config);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/tasks`,
+        config
+      );
       setTasks(res.data.data);
     } catch (error) {
       setError("Failed to fetch tasks. Please try again later.");
@@ -46,7 +49,11 @@ function Dashboard() {
     try {
       setError("");
       console.log(newTask.dueDate);
-      await axios.post("http://localhost:8000/api/v1/tasks", newTask, config);
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/tasks`,
+        newTask,
+        config
+      );
       setNewTask({
         title: "",
         description: "",
@@ -62,7 +69,7 @@ function Dashboard() {
   const deleteTask = async (id) => {
     try {
       setError("");
-      await axios.delete(`http://localhost:8000/api/v1/tasks/${id}`, config);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/tasks/${id}`, config);
       fetchTasks();
     } catch (error) {
       setError("Failed to delete task. Please try again.");
@@ -73,7 +80,7 @@ function Dashboard() {
     try {
       setError("");
       await axios.put(
-        `http://localhost:8000/api/v1/tasks/${id}`,
+        `${import.meta.env.VITE_API_URL}/tasks/${id}`,
         updatedTask,
         config
       );

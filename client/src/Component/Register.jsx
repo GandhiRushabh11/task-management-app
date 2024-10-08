@@ -13,8 +13,12 @@ function Register() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/auth/register",
-        { email, password, username }
+        `${import.meta.env.VITE_API_URL}/auth/register`,
+        {
+          email,
+          password,
+          username,
+        }
       );
 
       localStorage.setItem("token", res.data.token);
