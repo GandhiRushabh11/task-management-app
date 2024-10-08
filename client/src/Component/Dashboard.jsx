@@ -31,6 +31,7 @@ function Dashboard() {
     },
   };
 
+  //Fatching all tasks Based on user login
   const fetchTasks = async () => {
     try {
       setError("");
@@ -44,6 +45,7 @@ function Dashboard() {
     }
   };
 
+  // For Creating Tasks
   const createTask = async (e) => {
     e.preventDefault();
     try {
@@ -66,6 +68,7 @@ function Dashboard() {
     }
   };
 
+  //For Deleting Task
   const deleteTask = async (id) => {
     try {
       setError("");
@@ -76,6 +79,7 @@ function Dashboard() {
     }
   };
 
+  // For Updating Task
   const updateTask = async (id, updatedTask) => {
     try {
       setError("");
@@ -113,6 +117,8 @@ function Dashboard() {
         <h2 className="text-3xl font-bold mb-6 text-center">Task Management</h2>
 
         {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+
+        {/* Form for create Task */}
 
         <form onSubmit={createTask}>
           <div className="space-y-4 mb-4">
@@ -204,6 +210,8 @@ function Dashboard() {
         {filteredTasks.length === 0 && !error && (
           <p className="text-center text-gray-500">No tasks found.</p>
         )}
+
+        {/* Display Grid with all Tasks  */}
 
         <TaskTable
           tasks={filteredTasks}

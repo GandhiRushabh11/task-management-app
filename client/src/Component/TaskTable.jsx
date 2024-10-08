@@ -1,4 +1,3 @@
-// TaskTable.jsx
 import React, { useState } from "react";
 
 function TaskTable({ tasks, updateTask, deleteTask }) {
