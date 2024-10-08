@@ -40,7 +40,7 @@ then setup all key and server port (8000) in config copy.env (Please rename in t
 
 and then run
 
-``` npm run dev
+```npm run dev
 
 For client
 
@@ -48,10 +48,13 @@ cd client
 
 npm install
 
+Rename a .copyenv file to .env in the frontend directory with the following content:
+
+VITE_API_URL= `{Add your backend server link }/api/v1`
+
 and then run 
 
-``` npm run dev
+```npm run dev
 
 
-For API Frontend API currently setup with fixed url but trying to fix that soon 
-so use 8000 for Node server 
+
