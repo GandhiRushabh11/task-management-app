@@ -2,7 +2,7 @@ const Task = require("../models/taskModel");
 const asyncHandler = require("express-async-handler");
 
 exports.addTask = asyncHandler(async (req, res) => {
-  const { title, description, duedate, status } = req.body;
+  const { title, description, dueDate, status } = req.body;
 
   // Stroing User from request header
   const userID = req.user._id;
@@ -19,7 +19,7 @@ exports.addTask = asyncHandler(async (req, res) => {
   const task = await Task.create({
     title,
     description,
-    duedate,
+    dueDate,
     status,
     user: userID,
   });

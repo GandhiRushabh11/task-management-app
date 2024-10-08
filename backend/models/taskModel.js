@@ -11,8 +11,8 @@ const TaskSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please add a description"],
     },
-    duedate: {
-      type: Date,
+    dueDate: {
+      type: String,
     },
     status: {
       type: String,
