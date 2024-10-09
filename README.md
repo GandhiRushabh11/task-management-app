@@ -50,11 +50,30 @@ npm install
 
 Rename a .copyenv file to .env in the frontend directory with the following content:
 
-VITE_API_URL= `{Add your backend server link }/api/v1`
+VITE_API_URL= `{Add your backend server link }## Application Features
 
 and then run 
 
 ```npm run dev
 
+### User Flow
 
+1. **Register**: 
+   - The user signs up with a username, email, and password.
+   - A JWT token is generated and stored for authenticating future requests.
+   - Route look like :- `${URL}/register`
+2. **Login**: 
+   - The user logs in using their email and password.
+   - Upon successful login, the JWT token is stored, and the user is redirected to the **Dashboard**.
+   - Route look like :- `${URL}/login`
 
+3. **Access Dashboard**:
+   - The user can view, create, edit, and delete tasks.
+   - All API requests are authenticated using the stored JWT token.
+   - Route look like :- `${URL}/dashboard`
+   
+4. **Task Management**:
+   - The user can create, edit, delete, and filter tasks in the **Dashboard**.
+
+5. **Authenticated Requests**:
+   - Every request (task creation, update, deletion) includes the JWT token for user authentication.
